@@ -6,16 +6,16 @@
   
 
 body{
-    background-color: rgb(169,215,250);
+    background-color:  rgb(81, 111, 245);
     padding: 0;
     margin: 0;
     text-align: center;
-    font-family: "Valera Round";
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 header{
     height: 300px;
-    background-color: rgb(169,215,250);
+    background-color: rgb(81, 111, 245);
     padding: 0;
     margin: 0;
 }
@@ -23,7 +23,7 @@ header{
 #name{
     font-family: "Varela Round";
     font-size: 35pt;
-    color: rgb(81, 111, 245);
+    color: rgb(0,29,159);
 }
 
 #waves {
@@ -39,13 +39,15 @@ header{
   }
   
   .parallax > use:nth-child(1) {
-    animation-delay: -2s;
-    animation-duration: 7s;
+    animation-delay: -6s;
+    animation-duration: 20s;
+
   }
   
   .parallax > use:nth-child(2) {
-    animation-delay: -3s;
-    animation-duration: 10s;
+
+    animation-delay: -5s;
+    animation-duration: 17s;
   }
   
   .parallax > use:nth-child(3) {
@@ -54,17 +56,14 @@ header{
   }
 
   .parallax > use:nth-child(4) {
-    animation-delay: -5s;
-    animation-duration: 17s;
+
+    animation-delay: -3s;
+    animation-duration: 10s;
   }
 
-  .parallax > use:nth-child(4) {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    animation-delay: -6s;
-    animation-duration: 20s;
+  .parallax > use:nth-child(5) {
+    animation-delay: -2s;
+    animation-duration: 7s;
   }
   
   @keyframes move-forever {
@@ -75,13 +74,217 @@ header{
       transform: translate3d(85px, 0, 0); 
     }
   }
+
+.section{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+  
+.fade-in {
+    opacity: 0; 
+    transition: opacity 1s ease-in-out; 
+  }
+  
+
+  .fade-in-visible {
+    opacity: 1;
+  }
+
+/* bubbles */
+
+.bubble {
+    position: absolute;
+    bottom: -50px; /* Start the bubble off the bottom */
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white for the bubble */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: floatUp 6s ease-in-out infinite, fadeOut 6s ease-in-out infinite;
+  }
+  
+  /* Animation for bubbles floating up */
+  @keyframes floatUp {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh); /* Move up the full height of the viewport */
+      opacity: 0; /* Fade out */
+    }
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
   
 /* section 1 - about me */
 
+#section-1{
+    margin-top: -100px;
+}
+
+.about-me{
+    width: 75%;
+    padding: 20px;
+}
+
+#description{
+    color: rgb(211,211,211);
+    font-size: 20pt;
+}
+
+#introduction{
+    color: rgb(211,211,211);
+    font-size: 22pt;
+}
+
 /* section 2 - projects */
+
+#my-projects{
+    color:rgb(211,211,211);
+    background-color:rgb(0,29,159);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+/* Ensure bubbles appear correctly */
+.project-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 120px;
+    margin-top: 50px;
+  }
+  
+  /* Styling for each project bubble */
+  .project {
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  /* Hover effect for bubble scaling */
+  .project:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Initially hide the bubble content */
+  .project .bubble-content {
+    display: none; /* Hidden by default */
+  }
+  
+  /* Styling for the project details section */
+  .project-details {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .project-details.visible {
+    display: block;
+    opacity: 1;
+  }
+  
+  /* Pop animation */
+  @keyframes pop {
+    0% {
+      transform: scale(1);  /* Start at full size */
+      opacity: 1;  /* Fully visible */
+    }
+    50% {
+      transform: scale(0);  /* Shrink to 0 */
+      opacity: 0;  /* Fade out */
+    }
+    100% {
+      transform: scale(0);  /* Stay at 0 size */
+      opacity: 0;  /* Completely invisible */
+    }
+  }
+  
+  /* Apply the pop animation when clicked */
+  .project.popped {
+    animation: pop 0.5s forwards; /* Apply animation for popping */
+  }
+  
+  
+  
+#project-1{
+    margin-top: 50px;
+    margin-left: 25px;
+}
+
+#project-2{
+    margin-top: -50px;
+    margin-left: 70px;
+}
+
+#project-3{
+    margin-top: 5px;
+    margin-left: 25px;
+}
+
+.exit-btn {
+    padding: 10px 20px;
+    background-color: #006994;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  .exit-btn:hover {
+    background-color: #004a6d; /* Darker shade for hover */
+  }
+  
 
 /* section 3 - contact */
 
+/* footer */
+
+footer {
+    position: relative;
+    background-color:rgb(173, 126, 38); /* Your footer background color */
+    padding: 20px;
+    text-align: center;
+  }
+  
+  footer::before {
+    content: '';
+    position: absolute;
+    top: -20px; /* Adjust to move the wave up or down */
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: rgb(173, 126, 38);
+    border-radius: 90% 90% 0 0; /* Creates a wave effect */
+  }
+  
  
 
   
