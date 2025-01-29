@@ -20,45 +20,47 @@ for (let i = 0; i < 20; i++) {
   bubbleContainer.appendChild(bubble);
 }
 
-const projects = document.querySelectorAll('.project');
-const projectDetails = document.querySelector('.project-details');
-let currentlyActiveProject = null; // Track the currently active (viewed) project
+const projects = document.querySelectorAll('.project'); // Select all project bubbles
+const projectDetails = document.querySelector('.project-details'); // Project details container
 
 projects.forEach(project => {
-  project.addEventListener('click', () => {
-    // If there's already an active project, reset it before proceeding
-    if (currentlyActiveProject && currentlyActiveProject !== project) {
-      currentlyActiveProject.classList.remove('popped'); // Remove pop effect from the previous bubble
-      projectDetails.classList.remove('visible'); // Hide the previous project details
-    }
+  project.addEventListener('click', (event) => {
+    // Get the position of the clicked project (bubble)
+    const projectRect = project.getBoundingClientRect();
+    const projectX = projectRect.left + window.scrollX;
+    const projectY = projectRect.top + window.scrollY;
 
-    // Add the 'popped' class to trigger the pop animation for the current project
-    project.classList.add('popped');
+    // Calculate where to position the project details
+    projectDetails.style.left = `${projectX}px`;
+    projectDetails.style.top = `${projectY}px`;
 
-    // Wait for the pop animation to finish before displaying project details
-    setTimeout(() => {
-      const projectName = project.dataset.project;
-      const projectDescription = project.querySelector('.bubble-content').innerHTML;
+    // Get the project data (name, description)
+    const projectName = project.dataset.project;
+    const projectDescription = project.querySelector('.bubble-content').innerHTML;
 
-      // Update the project details section
-      projectDetails.innerHTML = `
-        <h3>${projectName}</h3>
-        <p>${projectDescription}</p>
-        <button class="exit-btn">Exit</button> <!-- Exit button -->
-      `;
-      projectDetails.classList.add('visible');  // Show the project details
+    // Update the project details content
+    projectDetails.innerHTML = `
+      <h3>${projectName}</h3>
+      <p>${projectDescription}</p>
+      <button class="exit-btn">Exit</button>
+    `;
 
-      // Update the currently active project
-      currentlyActiveProject = project;
+    // Show the project details
+    projectDetails.style.display = 'block';
 
-      // Get the exit button and add event listener to it
-      const exitButton = document.querySelector('.exit-btn');
-      exitButton.addEventListener('click', () => {
-        project.classList.remove('popped'); // Remove the pop effect to make the bubble visible again
-        projectDetails.classList.remove('visible'); // Hide the project details
-        currentlyActiveProject = null; // Reset the active project
-      });
-    }, 500);  // Wait for the pop animation to complete (500ms)
-  });
-});
+    // Hide the clicked bubble (make it disappear)
+    project.style.opacity = '0'; // Fade out the bubble
+    project.style.transform = 'scale(0)'; // Shrink the bubble
 
+    // Event listener for the exit button
+    const newExitButton = projectDetails.querySelector('.exit-btn');
+    newExitButton.addEventListener('click', () => {
+      projectDetails.style.display = 'none'; // Hide the project details
+
+      // Reset the bubble (make it visible and return to original size)
+      project.style.opacity = '1';
+      project.style.transform = 'scale(1)'; // Reset size to normal
+    });
+
+  }); // End of the 'click' event listener for each project
+}); // End of the forEach loop

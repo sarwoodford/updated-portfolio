@@ -5,13 +5,15 @@
   }
   
 
-body{
-    background-color:  rgb(81, 111, 245);
-    padding: 0;
+body {
+    background-color: rgb(81, 111, 245) ;
     margin: 0;
+    padding: 0;
+    width: 100%;
     text-align: center;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
-}
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
 
 header{
     height: 300px;
@@ -129,9 +131,11 @@ header{
   
 /* section 1 - about me */
 
-#section-1{
-    margin-top: -100px;
-}
+#section-1 {
+    background-color: rgb(81, 111, 245);
+  }
+  
+  
 
 .about-me{
     width: 75%;
@@ -150,6 +154,34 @@ header{
 
 /* section 2 - projects */
 
+#section-2 {
+    color: white;
+    padding: 50px;
+    margin: 0;
+    background-color: rgb(81, 111, 245);
+    background-image: url("https://www.transparenttextures.com/patterns/wavecut.png");
+}
+
+#projects-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+
+  
+  @keyframes waveAnimation {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+
 #my-projects{
     color:rgb(211,211,211);
     background-color:rgb(0,29,159);
@@ -163,7 +195,7 @@ header{
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    gap: 120px;
+    gap: 200px;
     margin-top: 50px;
   }
   
@@ -190,18 +222,24 @@ header{
   
   /* Initially hide the bubble content */
   .project .bubble-content {
-    display: none; /* Hidden by default */
+    display: none; 
   }
   
   /* Styling for the project details section */
   .project-details {
-    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: rgb(0,29,159); 
+    width: 300px;
+    height: 300px;
     padding: 20px;
-    background-color: #f1f1f1;
     border-radius: 8px;
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    display: none; 
+    z-index: 10; 
   }
   
   .project-details.visible {
@@ -233,38 +271,37 @@ header{
   
   
 #project-1{
-    margin-top: 50px;
-    margin-left: 25px;
+    margin-top: -70px;
 }
 
 #project-2{
-    margin-top: -50px;
-    margin-left: 70px;
+    margin-top: 40px;
 }
 
 #project-3{
-    margin-top: 5px;
-    margin-left: 25px;
+    margin-top: -40px;
 }
 
 .exit-btn {
     padding: 10px 20px;
-    background-color: #006994;
+    background-color: rgb(0,29,159);
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
   }
   
   .exit-btn:hover {
-    background-color: #004a6d; /* Darker shade for hover */
+    background-color: rgb(0,29,159);
   }
   
 
 /* section 3 - contact */
 
+#section-3{
+    background-color: rgb(81, 111, 245);
+    background-image: url("https://www.transparenttextures.com/patterns/wavecut.png");
+}
 /* footer */
 
 footer {
