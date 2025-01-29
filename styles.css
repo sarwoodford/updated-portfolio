@@ -98,7 +98,18 @@ header{
 
 /* bubbles */
 
-.bubble {
+/* Make bubble containers non-intrusive */
+.bubble-container {
+    position: relative;
+    width: 100%; /* Full width for the container */
+    height: 100%; /* Allow the container to grow depending on its content */
+    overflow: hidden; /* Hide overflowing bubbles */
+    pointer-events: none; /* Optional: prevents bubbles from interfering with other elements */
+    position: absolute; /* Optional: Use absolute positioning if you want to control where the section is placed */
+  }
+  
+  /* Bubble styles (same as before) */
+  .bubble {
     position: absolute;
     bottom: -50px; /* Start the bubble off the bottom */
     background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white for the bubble */
@@ -108,14 +119,13 @@ header{
     animation: floatUp 6s ease-in-out infinite, fadeOut 6s ease-in-out infinite;
   }
   
-  /* Animation for bubbles floating up */
   @keyframes floatUp {
     0% {
       transform: translateY(0);
       opacity: 1;
     }
     100% {
-      transform: translateY(-100vh); /* Move up the full height of the viewport */
+      transform: translateY(-100vh); /* Move up the full height of the container */
       opacity: 0; /* Fade out */
     }
   }
@@ -128,7 +138,7 @@ header{
       opacity: 0;
     }
   }
-  
+    
 /* section 1 - about me */
 
 #section-1 {
@@ -156,7 +166,7 @@ header{
 
 #section-2 {
     color: white;
-    padding: 50px;
+    padding: 0;
     margin: 0;
     background-color: rgb(81, 111, 245);
     background-image: url("https://www.transparenttextures.com/patterns/wavecut.png");
@@ -302,6 +312,78 @@ header{
     background-color: rgb(81, 111, 245);
     background-image: url("https://www.transparenttextures.com/patterns/wavecut.png");
 }
+
+#connect-with-me{
+    color:rgb(211,211,211);
+    text-shadow: 2px 2px rgb(0,29,159);
+    font-size: 25pt;
+}
+
+#contact-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 60%;
+    border: 1px solid rgb(0,29,159);
+    border-radius: 15px;
+    background-color: rgb(0,29,159, 50%);
+}
+
+#contact-form{
+    width: 80%;
+    height: 75%;
+}
+
+#user-name{
+    width: 80%;
+    height: 10%;
+    padding: 5px;
+    margin: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    border: 0;
+    color: rgb(0,29,159);
+    font-size: 20pt;
+}
+
+#user-email{
+    width: 80%;
+    height: 10%;
+    padding: 5px;
+    margin: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    border: 0;
+    color: rgb(0,29,159);
+    font-size: 20pt;
+}
+
+#user-message{
+    width: 80%;
+    height: 50%;
+    padding: 5px;
+    margin: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    border: 0;
+    color: rgb(0,29,159);
+    font-size: 20pt;
+}
+
+#send-btn{
+    width: 20%;
+    height: 10%;
+    padding: 5px;
+    margin: 5px;
+    background-color: rgb(81, 111, 245);
+    border: 1px solid rgb(0,29,159);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 12pt;
+    text-align: center;
+    border-radius: 10px;
+}
 /* footer */
 
 footer {
@@ -320,6 +402,8 @@ footer {
     margin: 0;
     padding-left: 100px;
     padding-right: 100px;
+    background-color: #ad6800;
+    background-image: url("https://www.transparenttextures.com/patterns/sandpaper.png");
 }
 
 #footer-container img{

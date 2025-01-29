@@ -13,7 +13,7 @@ bubbles.forEach(bubble => {
   bubble.style.animationDelay = `-${randomDelay}s`; 
 });
 
-const bubbleContainer = document.querySelector('.project-container');
+const bubbleContainer = document.querySelector('.bubble-container');
 for (let i = 0; i < 20; i++) { 
   const bubble = document.createElement('div');
   bubble.classList.add('bubble');
@@ -64,3 +64,24 @@ projects.forEach(project => {
 
   }); // End of the 'click' event listener for each project
 }); // End of the forEach loop
+
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize EmailJS
+    emailjs.init('mWOL8nRP282GElUjP'); // Replace with your public key
+  
+    // Add event listener for form submission
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();  // Prevent form default behavior (page reload)
+  
+      // Send the form using EmailJS
+      emailjs.sendForm('service_z3zw13q', 'template_xd5tahs', this)
+        .then(function(response) {
+          alert('Message sent successfully!');
+        }, function(error) {
+          alert('Error sending message: ' + error);
+        });
+    });
+  });
+  
