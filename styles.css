@@ -1,0 +1,87 @@
+.varela-round-regular {
+    font-family: "Varela Round", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+
+body{
+    background-color: rgb(169,215,250);
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-family: "Valera Round";
+}
+
+header{
+    height: 300px;
+    background-color: rgb(169,215,250);
+    padding: 0;
+    margin: 0;
+}
+
+#name{
+    font-family: "Varela Round";
+    font-size: 35pt;
+    color: rgb(81, 111, 245);
+}
+
+#waves {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100%
+  }
+  
+  .parallax > use {
+    animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+    transform: translate3d(0, 0, 0); 
+  }
+  
+  .parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+  }
+  
+  .parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+  }
+  
+  .parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+  }
+
+  .parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 17s;
+  }
+
+  .parallax > use:nth-child(4) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    animation-delay: -6s;
+    animation-duration: 20s;
+  }
+  
+  @keyframes move-forever {
+    0% {
+      transform: translate3d(-90px, 0, 0); 
+    }
+    100% {
+      transform: translate3d(85px, 0, 0); 
+    }
+  }
+  
+/* section 1 - about me */
+
+/* section 2 - projects */
+
+/* section 3 - contact */
+
+ 
+
+  
