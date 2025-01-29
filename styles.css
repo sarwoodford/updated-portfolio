@@ -305,22 +305,27 @@ header{
 /* footer */
 
 footer {
-    position: relative;
     background-color:rgb(173, 126, 38); /* Your footer background color */
-    padding: 20px;
+    padding: 0px;
+    margin: 0;
     text-align: center;
-  }
-  
-  footer::before {
-    content: '';
-    position: absolute;
-    top: -20px; /* Adjust to move the wave up or down */
-    left: 0;
-    width: 100%;
+}
+
+#footer-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+#footer-container img{
+    width: 100px;
     height: 100px;
-    background: rgb(173, 126, 38);
-    border-radius: 90% 90% 0 0; /* Creates a wave effect */
-  }
+}
   
  
 
