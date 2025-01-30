@@ -485,5 +485,25 @@ footer {
       width: 200px; /* Make bubbles smaller */
       height: 200px;
     }
+
+    #project-1{
+        margin-top: 30px;
+    }
+
+    #project-3{
+        width: 200px;
+        height: 200px;
+    }
+
+    #footer-container{
+        padding: 0;
+        margin: 0;
+    }
+
+    .about-me{
+        margin-top: 0;
+    }
+
+    
   }
   
