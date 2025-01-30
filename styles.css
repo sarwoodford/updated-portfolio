@@ -234,57 +234,178 @@ header{
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
 
-  @media (max-width: 768px) {
-    .project {
-      width: 250px; 
-      height: 250px;
-      margin: 20px;
+
+  @media (max-width: 1206px) {
+
+    body{
+        padding: 0;
+        margin: 0;
     }
 
-    .projects-container{
+    .project {
+        width: 200px; 
+        height: 200px;
+        margin: 0;
+        padding: 0;
+        margin-top: -50px;
+      }
+    .project:hover {
+        width: 210px;
+        height: 210px;
+      }
+
+    .project-container{
         margin: 30px;
-    }
-
-    #projects-box{
-        padding-top: 50px;
-    }
-
-    #my-projects{
-        margin-top: -30px;
-    }
-
-    #project-3{
-        width: 250px;
-        height: 250px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .project {
-      width: 200px; 
-      height: 200px;
-      margin: 40px;
-    }
-
-    #projects-box{
-        padding-top: 50px;
+        gap: 170px;
         justify-content: center;
         align-items: center;
+        height: 95vh;
     }
 
-    .projects-container{
-        margin: 30px;
+    #projects-box{
+        padding-top: 50px;
     }
+
+
+    #section-2{
+        height: 150vh;
+    }
+
 
     #my-projects{
-        padding-bottom: 30px;
+        margin-top: -300px;
+        margin-bottom: 50px;
     }
 
-    #project-3{
-        width: 200px;
-        height: 200px;
+    #project-1{
+        margin-top: 0;
     }
+    
+    #project-2{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    
+    #project-3{
+        margin-top: 0;
+        padding-bottom: 0;
+    }
+
   }
+
+  @media (max-width: 768px) {
+
+    body{
+        padding: 0;
+        margin: 0;
+    }
+
+    .project {
+        width: 200px; 
+        height: 200px;
+        margin: 0;
+        padding: 0;
+        margin-top: -50px;
+      }
+    .project:hover {
+        width: 210px;
+        height: 210px;
+      }
+
+    .project-container{
+        margin: 30px;
+        gap: 170px;
+        justify-content: center;
+        align-items: center;
+        height: 95vh;
+    }
+
+    #projects-box{
+        padding-top: 50px;
+    }
+
+
+    #section-2{
+        height: 150vh;
+    }
+
+
+    #project-1{
+        margin-top: 0;
+    }
+    
+    #project-2{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    
+    #project-3{
+        margin-top: 0;
+        padding-bottom: 0;
+    }
+
+
+
+  }
+  
+
+  
+  @media (max-width: 480px) {
+
+
+    body{
+        padding: 0;
+        margin: 0;
+    }
+
+    .project {
+        width: 200px; 
+        height: 200px;
+        margin: 0;
+        padding: 0;
+        margin-top: -50px;
+      }
+      .project:hover {
+        width: 210px;
+        height: 210px;
+      }
+
+    .project-container{
+        margin: 30px;
+        gap: 170px;
+        justify-content: center;
+        align-items: center;
+        height: 95vh;
+    }
+
+    #projects-box{
+        padding-top: 50px;
+    }
+
+
+
+    #section-2{
+        height: 150vh;
+    }
+
+
+    #project-1{
+        margin-top: 0;
+    }
+    
+    #project-2{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    
+    #project-3{
+        margin-top: 0;
+        padding-bottom: 0;
+    }
+
+  }
+
+
   
   /* Hover effect for bubble scaling */
   .project:hover {
@@ -295,27 +416,68 @@ header{
   .project .bubble-content {
     display: none; 
   }
-  
-  /* Styling for the project details section */
+
   .project-details {
-    display: flex;
+    display: none; /* Default hidden */
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: absolute; /* Keeps it on top of other content */
     background-color: rgba(255, 255, 255, 0.8);
     color: rgb(0,29,159); 
     width: 300px;
     height: 300px;
     padding: 20px;
     border-radius: 8px;
-    display: none; 
     z-index: 10; 
   }
   
   .project-details.visible {
-    display: block;
+    display: block; /* Makes it visible when triggered */
     opacity: 1;
+  }
+  
+  /* Media query adjustments for the project details box */
+  @media (max-width: 1206px) {
+    .project-details {
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      height:fit-content;
+      z-index: 10;
+      font-size: 12pt;
+      padding: 20px;
+
+    
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .project-details {
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      height:fit-content;
+      z-index: 10;
+      font-size: 12pt;
+      padding: 20px;
+     
+
+
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .project-details {
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      height:fit-content;
+      z-index: 10;
+      font-size: 12pt;
+      padding: 20px;
+
+    }
   }
   
   /* Pop animation */
@@ -350,7 +512,6 @@ header{
 
 #project-3{
     margin-top: -40px;
-    padding-bottom: 50px;
 }
 
 .exit-btn {
@@ -387,7 +548,7 @@ header{
     justify-content: center;
     align-items: center;
     width: 80%;
-    height: 60%;
+    height: 70%;
     border: 1px solid rgb(0,29,159);
     border-radius: 15px;
     background-color: rgb(0,29,159, 50%);
@@ -502,6 +663,37 @@ footer {
     }
   }
   
+
+  @media (max-width: 1206px) {
+    .section {
+      flex-direction: column; 
+      align-items: center; 
+      justify-content: center;
+    }
+  
+    #section-1, #section-2, #section-3 {
+      width: 100%; 
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  
+
+    .bubble-container {
+      position: relative;
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .bubble {
+        width: 25px;
+        height: 25px;
+        animation: floatUp 4s ease-in-out infinite, fadeOut 4s ease-in-out infinite;
+      }
+    
+  
+  }
  
 @media (max-width: 768px) {
     .section {
@@ -524,21 +716,45 @@ footer {
       overflow: hidden;
       pointer-events: none;
     }
+
+    .bubble {
+        width: 25px;
+        height: 25px;
+        animation: floatUp 4s ease-in-out infinite, fadeOut 4s ease-in-out infinite;
+      }
+    
   
-   
-    .project-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 150px;
-      margin: 50px;
-      height: 110%;
-    }
+  }
 
 
-    .project:hover{
-        width: 255px;
-        height: 255px;
+@media (max-width: 480px) {
+    .section {
+      flex-direction: column; 
+      align-items: center; 
+      justify-content: center;
     }
+  
+    #section-1, #section-2, #section-3 {
+      width: 100%; 
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  
+
+    .bubble-container {
+      position: relative;
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .bubble {
+        width: 25px;
+        height: 25px;
+        animation: floatUp 4s ease-in-out infinite, fadeOut 4s ease-in-out infinite;
+      }
+    
+  
   }
   
