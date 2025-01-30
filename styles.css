@@ -238,6 +238,7 @@ header{
     .project {
       width: 250px; 
       height: 250px;
+      padding: 20px;
     }
 
     #projects-box{
@@ -249,6 +250,7 @@ header{
     .project {
       width: 200px; 
       height: 200px;
+      padding: 20px;
     }
 
     #projects-box{
