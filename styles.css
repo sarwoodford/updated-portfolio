@@ -250,11 +250,13 @@ header{
     .project {
       width: 200px; 
       height: 200px;
-      margin: 20px;
+      margin: 40px;
     }
 
     #projects-box{
         padding-top: 50px;
+        justify-content: center;
+        align-items: center;
     }
   }
   
