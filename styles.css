@@ -147,13 +147,14 @@ header{
 @media (max-width: 768px) {
     .about-me {
       width: 100%; 
-      margin-top: 0; 
+      margin-top: -50px; 
     }
   }
   
   @media (max-width: 480px) {
     .about-me {
       padding: 10px; 
+      margin-top: -50px;
       width: 100%;
     }
   }
@@ -496,16 +497,6 @@ footer {
       height: 110%;
     }
 
-    #project-1{
-        margin-bottom: -50px;
-        margin-top: 10px;
-    }
-  
-
-    .project {
-      width: 250px;
-      height: 250px;
-    }
 
     .project:hover{
         width: 255px;
