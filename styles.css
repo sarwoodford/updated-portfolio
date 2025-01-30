@@ -144,6 +144,20 @@ header{
     margin-top: 200px;
 }
 
+@media (max-width: 768px) {
+    .about-me {
+      width: 100%; 
+      margin-top: 0; 
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .about-me {
+      padding: 10px; 
+      width: 100%;
+    }
+  }
+
 #description{
     color: rgb(211,211,211);
     font-size: 20pt;
@@ -218,6 +232,20 @@ header{
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
+
+  @media (max-width: 768px) {
+    .project {
+      width: 250px; 
+      height: 250px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .project {
+      width: 200px; 
+      height: 200px;
+    }
+  }
   
   /* Hover effect for bubble scaling */
   .project:hover {
@@ -266,10 +294,9 @@ header{
       opacity: 0;  /* Completely invisible */
     }
   }
-  
-  /* Apply the pop animation when clicked */
+
   .project.popped {
-    animation: pop 0.5s forwards; /* Apply animation for popping */
+    animation: pop 0.5s forwards; 
   }
   
   
@@ -396,7 +423,7 @@ header{
 /* footer */
 
 footer {
-    background-color:rgb(173, 126, 38); /* Your footer background color */
+    background-color:rgb(173, 126, 38);
     padding: 0px;
     margin: 0;
     text-align: center;
@@ -419,22 +446,38 @@ footer {
     width: 100px;
     height: 100px;
 }
+
+/* For small screens */
+@media (max-width: 768px) {
+    #footer-container {
+      padding-left: 20px;
+      padding-right: 20px;
+      justify-content: center; 
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #footer-container {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
   
  
 @media (max-width: 768px) {
     .section {
-      flex-direction: column; /* Stack sections vertically */
-      align-items: center; /* Center the sections */
+      flex-direction: column; 
+      align-items: center; 
       justify-content: center;
     }
   
     #section-1, #section-2, #section-3 {
-      width: 100%; /* Make sections full width */
+      width: 100%; 
       padding-top: 30px;
       padding-bottom: 30px;
     }
   
-    /* Adjust the bubble container to make sure bubbles don't overflow */
+
     .bubble-container {
       position: relative;
       width: 100%;
@@ -443,12 +486,12 @@ footer {
       pointer-events: none;
     }
   
-    /* Ensure project container layout is responsive */
+   
     .project-container {
       display: flex;
-      flex-direction: column; /* Stack bubbles vertically */
+      flex-direction: column;
       align-items: center;
-      gap: 150px; /* Adjust the gap between bubbles */
+      gap: 150px;
       margin: 50px;
       height: 110%;
     }
@@ -458,9 +501,9 @@ footer {
         margin-top: 10px;
     }
   
-    /* Ensure project bubbles are centered and properly sized */
+
     .project {
-      width: 250px; /* Adjust bubble size for smaller screens */
+      width: 250px;
       height: 250px;
     }
 
@@ -468,42 +511,5 @@ footer {
         width: 255px;
         height: 255px;
     }
-  }
-  
-/* Further adjustments for very small screens (e.g., phones under 480px) */
-@media (max-width: 480px) {
-    .section {
-      padding: 10px; /* Reduce padding for very small screens */
-    }
-  
-    #section-1, #section-2, #section-3 {
-      padding: 15px; /* Adjust padding for small screens */
-    }
-  
-    /* Project bubbles size */
-    .project {
-      width: 200px; /* Make bubbles smaller */
-      height: 200px;
-    }
-
-    #project-1{
-        margin-top: 30px;
-    }
-
-    #project-3{
-        width: 200px;
-        height: 200px;
-    }
-
-    #footer-container{
-        padding: 0;
-        margin: 0;
-    }
-
-    .about-me{
-        margin-top: 0;
-    }
-
-    
   }
   
