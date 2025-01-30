@@ -22,9 +22,18 @@ for (let i = 0; i < 20; i++) {
 
 const projects = document.querySelectorAll('.project'); // Select all project bubbles
 const projectDetails = document.querySelector('.project-details'); // Project details container
+let activeProject = null; // Track the active project
 
 projects.forEach(project => {
   project.addEventListener('click', (event) => {
+    // If there is an active project, reset its bubble before proceeding
+    if (activeProject && activeProject !== project) {
+      // Reset the previous active project bubble
+      activeProject.style.opacity = '1';
+      activeProject.style.transform = 'scale(1)';
+      activeProject.classList.remove('popped'); // Remove the "popped" effect (if any)
+    }
+
     // Get the position of the clicked project (bubble)
     const projectRect = project.getBoundingClientRect();
     const projectX = projectRect.left + window.scrollX;
@@ -52,6 +61,9 @@ projects.forEach(project => {
     project.style.opacity = '0'; // Fade out the bubble
     project.style.transform = 'scale(0)'; // Shrink the bubble
 
+    // Set the current project as active
+    activeProject = project;
+
     // Event listener for the exit button
     const newExitButton = projectDetails.querySelector('.exit-btn');
     newExitButton.addEventListener('click', () => {
@@ -60,6 +72,7 @@ projects.forEach(project => {
       // Reset the bubble (make it visible and return to original size)
       project.style.opacity = '1';
       project.style.transform = 'scale(1)'; // Reset size to normal
+      activeProject = null; // Clear the active project
     });
 
   }); // End of the 'click' event listener for each project
