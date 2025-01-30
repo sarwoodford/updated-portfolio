@@ -244,6 +244,15 @@ header{
     #projects-box{
         padding-top: 50px;
     }
+
+    #my-projects{
+        padding-bottom: 30px;
+    }
+
+    #project-3{
+        width: 200px;
+        height: 200px;
+    }
   }
   
   @media (max-width: 480px) {
@@ -257,6 +266,15 @@ header{
         padding-top: 50px;
         justify-content: center;
         align-items: center;
+    }
+
+    #my-projects{
+        padding-bottom: 30px;
+    }
+
+    #project-3{
+        width: 200px;
+        height: 200px;
     }
   }
   
