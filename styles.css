@@ -239,12 +239,20 @@ header{
       width: 250px; 
       height: 250px;
     }
+
+    #projects-box{
+        padding-top: 50px;
+    }
   }
   
   @media (max-width: 480px) {
     .project {
       width: 200px; 
       height: 200px;
+    }
+
+    #projects-box{
+        padding-top: 50px;
     }
   }
   
