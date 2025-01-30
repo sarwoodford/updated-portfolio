@@ -470,5 +470,20 @@ footer {
     }
   }
   
-
+/* Further adjustments for very small screens (e.g., phones under 480px) */
+@media (max-width: 480px) {
+    .section {
+      padding: 10px; /* Reduce padding for very small screens */
+    }
+  
+    #section-1, #section-2, #section-3 {
+      padding: 15px; /* Adjust padding for small screens */
+    }
+  
+    /* Project bubbles size */
+    .project {
+      width: 200px; /* Make bubbles smaller */
+      height: 200px;
+    }
+  }
   
