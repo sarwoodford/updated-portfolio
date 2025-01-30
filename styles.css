@@ -278,7 +278,7 @@ header{
     }
 
     #project-1{
-        margin-top: 0;
+        margin-top: 10px;
     }
     
     #project-2{
@@ -331,7 +331,7 @@ header{
 
 
     #project-1{
-        margin-top: 0;
+        margin-top: 10px;
     }
     
     #project-2{
@@ -385,12 +385,11 @@ header{
 
 
     #section-2{
-        height: 150vh;
+        height: 135vh;
     }
 
-
     #project-1{
-        margin-top: 0;
+        margin-top: 10px;
     }
     
     #project-2{
@@ -447,7 +446,7 @@ header{
       z-index: 10;
       font-size: 12pt;
       padding: 20px;
-
+    
     
     }
   }
