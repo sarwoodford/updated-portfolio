@@ -241,17 +241,21 @@ header{
       margin: 20px;
     }
 
+    .projects-container{
+        margin: 30px;
+    }
+
     #projects-box{
         padding-top: 50px;
     }
 
     #my-projects{
-        padding-bottom: 30px;
+        margin-top: -30px;
     }
 
     #project-3{
-        width: 200px;
-        height: 200px;
+        width: 250px;
+        height: 250px;
     }
   }
   
@@ -266,6 +270,10 @@ header{
         padding-top: 50px;
         justify-content: center;
         align-items: center;
+    }
+
+    .projects-container{
+        margin: 30px;
     }
 
     #my-projects{
